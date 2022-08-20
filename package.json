@@ -9,7 +9,7 @@
     "lib/"
   ],
   "scripts": {
-    "test": "jshint . && nyc mocha",
+    "test": "eslint . && nyc mocha",
     "build": "mkdirp ./dist && browserify -r buffer -r ./lib/wkx.js:wkx ./lib/wkx.js > ./dist/wkx.js && uglifyjs -c -m -- ./dist/wkx.js > ./dist/wkx.min.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
@@ -20,12 +20,13 @@
     "browserify": "^16.5.0",
     "coveralls": "^3.0.11",
     "deep-eql": "^4.0.0",
-    "jshint": "^2.11.0",
+    "eslint": "^8.22.0",
     "json-stringify-pretty-compact": "^2.0.0",
     "mkdirp": "^1.0.3",
     "mocha": "^7.1.1",
     "nyc": "^15.0.0",
     "pg": "^7.18.2",
+    "prettier": "^2.7.1",
     "uglify-js": "^3.8.0"
   },
   "repository": {
